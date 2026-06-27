@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages - ConnectHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    height:100vh;
+    overflow:hidden;
+}
+
+.chat-container{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    height:100vh;
+}
+
+/* Sidebar */
+
+.chat-sidebar{
+    background:#020617;
+    border-right:1px solid rgba(255,255,255,.08);
+    overflow-y:auto;
+}
+
+.chat-header{
+    padding:25px;
+    font-size:24px;
+    font-weight:600;
+}
+
+.chat-user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.chat-user:hover{
+    background:#1e293b;
+}
+
+.chat-user.active{
+    background:#1e293b;
+}
+
+.chat-user img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+}
+
+.chat-user h4{
+    font-size:15px;
+}
+
+.chat-user p{
+    color:#94a3b8;
+    font-size:13px;
+}
+
+/* Chat Area */
+
+.chat-area{
+    display:flex;
+    flex-direction:column;
+}
+
+.top-bar{
+    padding:20px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.top-bar img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+}
+
+.messages{
+    flex:1;
+    overflow-y:auto;
+    padding:25px;
+}
+
+.message{
+    max-width:70%;
+    padding:14px 18px;
+    border-radius:18px;
+    margin-bottom:15px;
+}
+
+.received{
+    background:#1e293b;
+}
+
+.sent{
+    background:#38bdf8;
+    margin-left:auto;
+}
+
+.input-area{
+    padding:20px;
+    display:flex;
+    gap:15px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.input-area input{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#1e293b;
+    color:white;
+}
+
+.input-area button{
+    border:none;
+    background:#38bdf8;
+    color:white;
+    padding:15px 25px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .chat-container{
+        grid-template-columns:1fr;
+    }
+
+    .chat-sidebar{
+        display:none;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- Sidebar -->
+
+    <div class="chat-sidebar">
+
+        <div class="chat-header">
+            Messages
+        </div>
+
+        <div class="chat-user active">
+            <img src="https://i.pravatar.cc/100?img=11">
+            <div>
+                <h4>Alex Johnson</h4>
+                <p>Online</p>
+            </div>
+        </div>
+
+        <div class="chat-user">
+            <img src="https://i.pravatar.cc/100?img=20">
+            <div>
+                <h4>Emma Watson</h4>
+                <p>Last seen 5 min ago</p>
+            </div>
+        </div>
+
+        <div class="chat-user">
+            <img src="https://i.pravatar.cc/100?img=30">
+            <div>
+                <h4>David Smith</h4>
+                <p>Typing...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Chat Area -->
+
+    <div class="chat-area">
+
+        <div class="top-bar">
+            <img src="https://i.pravatar.cc/100?img=11">
+            <h3>Alex Johnson</h3>
+        </div>
+
+        <div class="messages" id="messages">
+
+            <div class="message received">
+                Hey 👋 How's your project going?
+            </div>
+
+            <div class="message sent">
+                Going great! Building ConnectHub now 🚀
+            </div>
+
+            <div class="message received">
+                Awesome! Share it once completed.
+            </div>
+
+        </div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+            >
+
+            <button id="sendBtn">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const sendBtn =
+document.getElementById("sendBtn");
+
+const input =
+document.getElementById("messageInput");
+
+const messages =
+document.getElementById("messages");
+
+sendBtn.addEventListener("click",sendMessage);
+
+input.addEventListener("keypress",(e)=>{
+
+    if(e.key==="Enter"){
+        sendMessage();
+    }
+
+});
+
+function sendMessage(){
+
+    const text =
+    input.value.trim();
+
+    if(text==="") return;
+
+    const div =
+    document.createElement("div");
+
+    div.classList.add(
+        "message",
+        "sent"
+    );
+
+    div.textContent = text;
+
+    messages.appendChild(div);
+
+    input.value="";
+
+    messages.scrollTop =
+    messages.scrollHeight;
+
+}
+
+</script>
+
+</body>
+</html>

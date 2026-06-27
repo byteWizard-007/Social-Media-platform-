@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore - ConnectHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+.header{
+    padding:25px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:38px;
+}
+
+.search-box{
+    width:90%;
+    max-width:700px;
+    margin:20px auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#1e293b;
+    color:white;
+}
+
+.trending-tags{
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.tag{
+    background:#1e293b;
+    padding:10px 18px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tag:hover{
+    background:#38bdf8;
+}
+
+.section-title{
+    width:90%;
+    margin:40px auto 20px;
+}
+
+.posts-grid{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.creator-grid{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.creator{
+    background:#1e293b;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.creator img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+}
+
+.creator h3{
+    margin-top:12px;
+}
+
+.creator p{
+    color:#94a3b8;
+    margin-top:5px;
+}
+
+.creator button{
+    margin-top:15px;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+}
+
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    background:#020617;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Explore</h1>
+</div>
+
+<div class="search-box">
+    <input
+        type="text"
+        placeholder="Search posts, hashtags, creators..."
+    >
+</div>
+
+<div class="trending-tags">
+    <span class="tag">#WebDevelopment</span>
+    <span class="tag">#JavaScript</span>
+    <span class="tag">#ReactJS</span>
+    <span class="tag">#UIUX</span>
+    <span class="tag">#Programming</span>
+    <span class="tag">#Frontend</span>
+</div>
+
+<h2 class="section-title">
+Trending Posts
+</h2>
+
+<div class="posts-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800">
+<div class="card-content">
+<h3>Modern Dashboard UI</h3>
+<p>
+Beautiful glassmorphism dashboard
+designed using HTML CSS and JavaScript.
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800">
+<div class="card-content">
+<h3>React Project</h3>
+<p>
+Built a responsive React application
+with smooth animations and API integration.
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800">
+<div class="card-content">
+<h3>Developer Setup</h3>
+<p>
+Minimal coding workspace setup for
+productivity and learning.
+</p>
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">
+Suggested Creators
+</h2>
+
+<div class="creator-grid">
+
+<div class="creator">
+<img src="https://i.pravatar.cc/150?img=12">
+<h3>Alex Johnson</h3>
+<p>Frontend Developer</p>
+<button>Follow</button>
+</div>
+
+<div class="creator">
+<img src="https://i.pravatar.cc/150?img=15">
+<h3>Emma Watson</h3>
+<p>UI Designer</p>
+<button>Follow</button>
+</div>
+
+<div class="creator">
+<img src="https://i.pravatar.cc/150?img=20">
+<h3>David Smith</h3>
+<p>React Developer</p>
+<button>Follow</button>
+</div>
+
+</div>
+
+<footer>
+<h3>ConnectHub Explore</h3>
+<p style="margin-top:10px;color:#94a3b8;">
+Discover trending content and creators.
+</p>
+</footer>
+
+</body>
+</html>

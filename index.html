@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ConnectHub | Social Media Platform</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-bolt"></i>
+<h2>Soacialize</h2>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li class="active">
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+</li>
+
+<li>
+    <a href="explore.html">
+        <i class="fa-solid fa-compass"></i>
+        <span>Explore</span>
+    </a>
+</li>
+
+<li>
+    <a href="messages.html">
+        <i class="fa-solid fa-message"></i>
+        <span>Messages</span>
+    </a>
+</li>
+
+<li>
+    <a href="notifications.html">
+        <i class="fa-solid fa-bell"></i>
+        <span>Notifications</span>
+    </a>
+</li>
+
+<li>
+    <a href="profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+    </a>
+</li>
+
+<li>
+    <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+    </a>
+</li>
+
+</ul>
+
+</nav>
+
+</aside>
+
+<!-- MAIN FEED -->
+
+<main class="feed">
+
+<div class="top-bar">
+
+<h1>Home Feed</h1>
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search users, posts..."
+>
+
+</div>
+
+</div>
+
+<!-- CREATE POST -->
+
+<div class="create-post">
+
+<div class="post-top">
+
+<img
+src="https://i.pravatar.cc/100?img=5"
+alt=""
+>
+
+<textarea
+id="postInput"
+placeholder="What's on your mind?"
+></textarea>
+
+</div>
+
+<button id="postBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+Post
+
+</button>
+
+</div>
+
+<!-- POSTS -->
+
+<div id="postsContainer">
+
+<div class="post-card">
+
+<div class="post-header">
+
+<img
+src="https://i.pravatar.cc/100?img=11"
+alt=""
+>
+
+<div>
+
+<h3>Alex Johnson</h3>
+<p>2 hours ago</p>
+
+</div>
+
+</div>
+
+<p class="post-text">
+
+Just finished building a new
+JavaScript project 🚀
+
+</p>
+
+<img
+class="post-image"
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+alt=""
+>
+
+<div class="post-actions">
+
+<button>
+<i class="fa-regular fa-heart"></i>
+Like
+</button>
+
+<button>
+<i class="fa-regular fa-comment"></i>
+Comment
+</button>
+
+<button>
+<i class="fa-solid fa-share"></i>
+Share
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- RIGHT SIDEBAR -->
+
+<aside class="right-sidebar">
+
+<div class="card">
+
+<h3>Trending</h3>
+
+<div class="tag">#WebDevelopment</div>
+<div class="tag">#JavaScript</div>
+<div class="tag">#ReactJS</div>
+<div class="tag">#Frontend</div>
+<div class="tag">#Design</div>
+
+</div>
+
+<div class="card">
+
+<h3>Suggested Users</h3>
+
+<div class="user">
+
+<img src="https://i.pravatar.cc/60?img=25">
+
+<div>
+
+<h4>Emma</h4>
+<p>UI Designer</p>
+
+</div>
+
+<button>
+Follow
+</button>
+
+</div>
+
+<div class="user">
+
+<img src="https://i.pravatar.cc/60?img=30">
+
+<div>
+
+<h4>David</h4>
+<p>Developer</p>
+
+</div>
+
+<button>
+Follow
+</button>
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

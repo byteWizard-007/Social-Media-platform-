@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConnectHub Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#06b6d4);
+}
+
+.register-box{
+    width:450px;
+    padding:40px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+}
+
+.input-group input::placeholder{
+    color:#cbd5e1;
+}
+
+.register-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.register-btn:hover{
+    opacity:.9;
+}
+
+.bottom{
+    text-align:center;
+    margin-top:20px;
+    color:white;
+}
+
+.bottom a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+@media(max-width:500px){
+
+    .register-box{
+        width:90%;
+        padding:25px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="register-box">
+
+    <h1>Create Account</h1>
+    <p class="subtitle">
+        Join ConnectHub Today
+    </p>
+
+    <form id="registerForm">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create Password"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required
+            >
+        </div>
+
+        <button class="register-btn">
+            Register
+        </button>
+
+    </form>
+
+    <div class="bottom">
+        Already have an account?
+        <a href="login.html">
+            Login
+        </a>
+    </div>
+
+</div>
+
+<script>
+
+document
+.getElementById("registerForm")
+.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirm =
+        document.getElementById("confirmPassword").value;
+
+    if(password !== confirm){
+
+        alert("Passwords do not match");
+        return;
+    }
+
+    const user = {
+        name,
+        email,
+        password
+    };
+
+    localStorage.setItem(
+        "connecthub_registered_user",
+        JSON.stringify(user)
+    );
+
+    alert("Registration Successful");
+
+    window.location.href =
+        "login.html";
+
+});
+
+</script>
+
+</body>
+</html>

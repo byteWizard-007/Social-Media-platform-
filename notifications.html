@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications - ConnectHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    padding:30px;
+    text-align:center;
+    background:#020617;
+}
+
+.header h1{
+    font-size:36px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.notification{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:20px;
+    margin-bottom:15px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    transition:.3s;
+}
+
+.notification:hover{
+    transform:translateX(5px);
+    border-color:#38bdf8;
+}
+
+.notification img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+}
+
+.notification-content{
+    flex:1;
+}
+
+.notification-content h3{
+    font-size:16px;
+}
+
+.notification-content p{
+    color:#94a3b8;
+    margin-top:5px;
+}
+
+.time{
+    color:#64748b;
+    font-size:13px;
+}
+
+.badge{
+    background:#ef4444;
+    color:white;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Notifications</h1>
+</div>
+
+<div class="container">
+
+    <div class="notification">
+        <img src="https://i.pravatar.cc/100?img=11">
+        <div class="notification-content">
+            <h3>Alex Johnson liked your post ❤️</h3>
+            <p>Your latest JavaScript project received a like.</p>
+        </div>
+        <span class="time">2 min ago</span>
+    </div>
+
+    <div class="notification">
+        <img src="https://i.pravatar.cc/100?img=22">
+        <div class="notification-content">
+            <h3>Emma commented on your post 💬</h3>
+            <p>Awesome UI design! Keep it up.</p>
+        </div>
+        <span class="time">10 min ago</span>
+    </div>
+
+    <div class="notification">
+        <img src="https://i.pravatar.cc/100?img=30">
+        <div class="notification-content">
+            <h3>David started following you 👤</h3>
+            <p>You have a new follower.</p>
+        </div>
+        <span class="badge">NEW</span>
+    </div>
+
+    <div class="notification">
+        <img src="https://i.pravatar.cc/100?img=45">
+        <div class="notification-content">
+            <h3>Sophia shared your post 🔁</h3>
+            <p>Your content is reaching more people.</p>
+        </div>
+        <span class="time">1 hour ago</span>
+    </div>
+
+    <div class="notification">
+        <img src="https://i.pravatar.cc/100?img=52">
+        <div class="notification-content">
+            <h3>James mentioned you 📢</h3>
+            <p>Check out this new frontend framework.</p>
+        </div>
+        <span class="time">3 hours ago</span>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 ConnectHub • Notifications Center
+</footer>
+
+</body>
+</html>

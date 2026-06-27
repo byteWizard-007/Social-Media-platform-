@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - ConnectHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.settings-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.settings-card h2{
+    margin-bottom:20px;
+}
+
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.setting-item:last-child{
+    border-bottom:none;
+}
+
+input[type="checkbox"]{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+input[type="text"],
+input[type="email"]{
+    width:250px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+}
+
+.btn{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.logout-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+    .setting-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    input[type="text"],
+    input[type="email"]{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Settings</h1>
+
+<!-- Profile Settings -->
+
+<div class="settings-card">
+
+<h2>Profile Settings</h2>
+
+<div class="setting-item">
+<label>Name</label>
+<input type="text" value="Siva Ganesh">
+</div>
+
+<div class="setting-item">
+<label>Email</label>
+<input type="email" value="siva@email.com">
+</div>
+
+<div class="setting-item">
+<button class="btn">
+Save Profile
+</button>
+</div>
+
+</div>
+
+<!-- Notifications -->
+
+<div class="settings-card">
+
+<h2>Notification Settings</h2>
+
+<div class="setting-item">
+<label>Email Notifications</label>
+<input type="checkbox" checked>
+</div>
+
+<div class="setting-item">
+<label>Push Notifications</label>
+<input type="checkbox" checked>
+</div>
+
+<div class="setting-item">
+<label>Friend Requests</label>
+<input type="checkbox" checked>
+</div>
+
+</div>
+
+<!-- Privacy -->
+
+<div class="settings-card">
+
+<h2>Privacy Settings</h2>
+
+<div class="setting-item">
+<label>Private Account</label>
+<input type="checkbox">
+</div>
+
+<div class="setting-item">
+<label>Show Online Status</label>
+<input type="checkbox" checked>
+</div>
+
+</div>
+
+<!-- Theme -->
+
+<div class="settings-card">
+
+<h2>Theme</h2>
+
+<div class="setting-item">
+<label>Dark Mode</label>
+<input
+type="checkbox"
+id="darkMode"
+checked
+>
+</div>
+
+</div>
+
+<!-- Account -->
+
+<div class="settings-card">
+
+<h2>Account</h2>
+
+<button
+class="logout-btn"
+id="logoutBtn"
+>
+Logout
+</button>
+
+</div>
+
+<footer>
+© 2026 ConnectHub • Settings Center
+</footer>
+
+</div>
+
+<script>
+
+const darkMode =
+document.getElementById("darkMode");
+
+darkMode.addEventListener("change",()=>{
+
+if(!darkMode.checked){
+
+document.body.style.background =
+"#f8fafc";
+
+document.body.style.color =
+"#000";
+
+}else{
+
+document.body.style.background =
+"#0f172a";
+
+document.body.style.color =
+"#fff";
+
+}
+
+});
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click",()=>{
+
+localStorage.clear();
+
+alert("Logged Out Successfully");
+
+window.location.href =
+"login.html";
+
+});
+
+</script>
+
+</body>
+</html>
